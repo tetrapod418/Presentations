@@ -1,0 +1,6 @@
+@import 'default';
+
+section.slides.qrimg {
+  max-width: 200px;
+  max-height: 200px;
+}
