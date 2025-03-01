@@ -1,17 +1,11 @@
-# Marp CLI Action template
+# tetrapod418
 
-A template repository for [Marp CLI Action](https://github.com/KoharaKazuya/marp-cli-action).
+## SNS(X)
+https://x.com/jnkykn
 
-Details:
+## blog(note)
+https://note.com/_tetrapod
 
-- [Marp](https://marp.app/)
-- [Marp CLI Action](https://github.com/KoharaKazuya/marp-cli-action)
-
-You can write and put Marp markdown files into this repository, then commit and push to GitHub.
-GitHub Actions workflow automatically generates slide deck (HTML and PDF) and publishes them on GitHub Pages.
-
-After creating a repository using this template, please follow the steps below.
-
-1. Open `Settings` in your repository.
-2. Open `Pages`.
-3. Select `GitHub Actions` in `Build and deployment` - `Source`.
+## Presentations
+### 2025-03-09 エンジニアがこの先生きのこるためのカンファレンス
+[引き際は自分で決める！～究極の選択と還暦で定年の無い企業に転職した話～](https://tetrapod418.github.io/Presentations/20250309_kinoko.html)
