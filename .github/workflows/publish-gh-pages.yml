@@ -5,43 +5,20 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Convert Markdown into HTML and PDF
-        uses: KoharaKazuya/marp-cli-action@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          config-file: .marprc.yml
-
-      - name: Uploade artifact
-        uses: actions/upload-pages-artifact@v3
+          node-version: 20
+      - run: npm ci
+      - run: cd ${{ github.workspace }}/20250309-kinoko
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./src
-
-  deploy:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          deploy_key: ${{ secrets.MY_PERSONAL_GITHUB_TOKEN }}
+          publish_dir: .

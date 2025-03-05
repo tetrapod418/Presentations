@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pdf": "marp --pdf",
     "pptx": "marp --pptx",
-    "html": "marp --html"
+    "html": "marp --html",
+    "build": "marp --html && mv *.html index.html"
   },
   "keywords": [],
   "author": "",
