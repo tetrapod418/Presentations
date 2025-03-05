@@ -17,7 +17,7 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: cd ${{ github.workspace }}/20250309_kinoko
-      - run: npm run html ./*.md
+      - run: npm run html 20250309_kinoko.md
       - run: mv ./*.html ./index.html
       - uses: peaceiris/actions-gh-pages@v3
         with:
