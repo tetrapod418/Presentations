@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: cd ${{ github.workspace }}/20250309-kinoko
+      - run: cd ./20250309-kinoko
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
